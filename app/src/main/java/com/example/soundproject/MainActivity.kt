@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         soundPool.release()
     }
 
+
     private fun playSound(sound: Int): Int {
         if (sound > 0) {
             streamID = soundPool.play(sound, 1F, 1F, 1, 0, 1F)
