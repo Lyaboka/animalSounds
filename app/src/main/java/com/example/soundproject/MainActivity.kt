@@ -8,6 +8,8 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import java.io.IOException
 
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var elephantIV: ImageView
     private lateinit var pigIV: ImageView
     private lateinit var sheepIV: ImageView
+    private lateinit var sunIV: ImageView
 
 
 
@@ -62,6 +65,9 @@ class MainActivity : AppCompatActivity() {
         elephantIV.setOnClickListener { playSound(elephantSound) }
         sheepIV.setOnClickListener { playSound(sheepSound) }
         pigIV.setOnClickListener { playSound(pigSound) }
+
+        val sunRiseAnimation: Animation = AnimationUtils.loadAnimation(this,R.anim.sun_rise)
+        sunIV.startAnimation(sunRiseAnimation)
     }
 
     override fun onPause() {
@@ -94,5 +100,6 @@ class MainActivity : AppCompatActivity() {
         elephantIV = findViewById(R.id.elephantIV)
         pigIV = findViewById(R.id.pigIV)
         sheepIV = findViewById(R.id.sheepIV)
+        sunIV = findViewById(R.id.sun)
     }
 }
